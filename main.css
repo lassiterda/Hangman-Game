@@ -1,0 +1,37 @@
+
+body {
+  font-family: Courier, monospace;
+  text-transform: uppercase;;
+    background-color: #111;
+    font-size: 18px;
+    font-weight: bold;
+}
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid 00ff00;
+  color: #00ff00;
+}
+.container {
+  width: 90%;
+  margin: 50px; auto;
+  color: #00ff00;
+  text-transform: capitalize;
+}
+
+.continer p {
+  margin: 20px 0px;
+}
+.no-display {
+    display: none;
+
+}
+.displayed {
+  display: block;
+}
+
+#displayed-word li {
+  padding: 0px 15px;
+  display: inline;
+  text-transform: uppercase;
+}

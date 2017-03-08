@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+        <p id="greeting"></p>
+        <p id="question"></p>
+        <p id="responseNo"></p>
+        <p id="responseYes"></p>
+        <div id="gameCTA" class="no-display">
+          <a id="yesGame" href="#">YES</a><a id="noGame" href="#">NO</a>
+        </div>
+        <div id="game-area" class="no-display">
+            <div id="displayed-word"></div>
+            <div>
+              <p>GUESSES REMAINING</p>
+                <div id="guesses-remaining"></div>
+            </div>
+            <div>
+              <p>LETTERS GUESSED</p>
+              <p id="letters-guessed"> </p>
+            </div>
+            <p>WINS: <span id="wins"></span></p>
+            <p>LOSSES: <span id="wins"></span></p>
+        </div>
+    </div>
+
+  <script type="text/javascript" src="hangman.js"></script>
+  </body>
+</html>
+<script>
+var greeting = document.getElementById('greeting');
+var question = document.getElementById('question');
+var response = document.getElementById('response');
+var gameCTA = document.getElementById('gameCTA');
+var gameArea = document.getElementById('game-area')
+var greetText = "GREETINGS PROFESSOR FALKEN.";
+var  questionText = "SHALL WE PLAY A GAME?";
+var yesText = "EXCELLENT.  HOW ABOUT A NICE GAME OF HANGMAN?";
+var noText = "I'M SORRY, I DON'T KNOW HOW TO DO ANYTHING ELSE."
+var winReplayText = "YOU'VE WON, WOULD YOU LIKE TO PLAY AGAIN?";
+var loseReplayText = "YOU'VE LOST... WOULD YOU LIKE TO PLAY AGAIN?";
+function printInfo(str, ele, del) {
+      let c = 0; let times = str.length;
+      ele.textContent = "";
+      function slowLoop() {
+        ele.textContent += str[c];
+        c++;
+        if( c < times ){
+            setTimeout( slowLoop, del);
+        }
+      }
+      slowLoop();
+    }
+
+printInfo(greetText, greeting, 75);
+setTimeout(function z() {printInfo(questionText, question, 75)}, 4000);
+setTimeout(function z() {gameCTA.classList.remove("no-display")}, 6000);
+
+document.getElementById('yesGame').addEventListener("click", function(){
+printInfo(yesText, responseYes, 75);
+setTimeout(function z() {gameArea.classList.remove("no-display"); hangman.startGame()}, 4000);
+setTimeout(function z() {gameCTA.classList.add("no-display")}, 4000)
+})
+
+document.getElementById('noGame').addEventListener("click", function(){
+printInfo(noText, responseNo, 75);
+})
+</script>
