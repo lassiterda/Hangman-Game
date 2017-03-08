@@ -66,7 +66,7 @@ var hangman = {
                   if (hangman.numBlanks === 0) {
                     hangman.wins++;
                     document.getElementById('wins').innerHTML = hangman.wins;
-                    alert("you Win!");
+                    alert("You Win!");
                     if (confirm("Play Again?")) {
                       hangman.startGame();
                     }

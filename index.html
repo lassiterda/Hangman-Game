@@ -20,7 +20,7 @@
             </div>
             <p>LETTERS GUESSED:  <span id="letters-guessed"></span></p>
             <p>WINS: <span id="wins"></span></p>
-            <p>LOSSES: <span id="wins"></span></p>
+            <p>LOSSES: <span id="losses"></span></p>
         </div>
     </div>
 
@@ -58,8 +58,8 @@ setTimeout(function z() {gameCTA.classList.remove("no-display")}, 6000);
 
 document.getElementById('yesGame').addEventListener("click", function(){
 printInfo(yesText, responseYes, 75);
+gameCTA.classList.add("no-display")
 setTimeout(function z() {gameArea.classList.remove("no-display"); hangman.startGame()}, 4000);
-setTimeout(function z() {gameCTA.classList.add("no-display")}, 4000)
 })
 
 document.getElementById('noGame').addEventListener("click", function(){
